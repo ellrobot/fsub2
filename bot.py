@@ -13,6 +13,7 @@ from config import (
     CHANNEL_ID,
     FORCE_SUB_CHANNEL,
     FORCE_SUB_GROUP,
+    FORCE_SUB_ELL, 
     LOGGER,
     OWNER,
     TG_BOT_TOKEN,
