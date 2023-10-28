@@ -60,6 +60,18 @@ class Bot(Client):
                 self.LOGGER(__name__).info(
                     f"FORCE_SUB_CHANNEL detected!\n┌ Title: {info.title}\n└ Chat ID: {info.id}\n——"
                 )
+                
+        if FORCE_SUB_ELL:
+            try:
+                info = await self.get_chat(FORCE_SUB_CHANNEL)
+                link = info.invite_link
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL)
+                    link = info.invite_link
+                self.invitelink = link
+                self.LOGGER(__name__).info(
+                    f"FORCE_SUB_ELL detected!\n┌ Title: {info.title}\n└ Chat ID: {info.id}\n——"
+        )
             except Exception as a:
                 self.LOGGER(__name__).warning(a)
                 self.LOGGER(__name__).warning(
